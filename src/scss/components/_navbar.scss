@@ -1,0 +1,139 @@
+// 
+// Navbar
+//
+
+.navbar {
+  @include media-breakpoint-up(lg) {
+    padding: 0 1rem;
+  }
+
+  &.navbar-bg {
+    background-color: rgba($black, 1);
+  }
+}
+
+// Navbar brand
+//
+// Used for brand, project, or site names.
+
+.navbar-brand {
+  padding: 0;
+  img {
+    width: 90px;
+  }
+}
+
+// Navbar nav
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar-nav {
+  .nav-link {
+    @include media-breakpoint-up(lg) {
+      padding: 1.1rem 1rem;
+    }
+    padding: .5rem 1rem;
+    font-size: ($font-size-base - .2);
+    text-transform: uppercase;
+    // font-weight: 500;
+  }
+  .dropdown-menu {
+    padding: 0px;
+    margin: -.1rem 0 0 -.05rem;
+    border: 1px solid transparent;
+    border-radius: 0;
+    @include media-breakpoint-down(lg) {
+      margin: -.05rem 0 0;
+    }
+
+    .dropdown-item {
+      padding: .5rem 1.5rem;
+    }
+  }
+}
+
+
+// Navbar themes
+//
+// Styles for switching between navbar.
+
+// White links against a dark background
+.navbar-defs {
+  .navbar-brand {
+    color: $navbar-defs-active-color;
+
+    @include hover-focus {
+      color: $navbar-defs-active-color;
+    }
+  }
+  
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-defs-color;
+
+      @include hover-focus {
+        @include media-breakpoint-up(lg) {
+          background-color: $navbar-defs-hover-bg-color;
+        }
+        color: $navbar-defs-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-defs-disabled-color;
+        @include hover-focus {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      @include media-breakpoint-up(lg) {
+        background-color: rgba($black, 1);
+      }
+      background-color: transparent;
+      .dropdown-item {
+        @include hover-focus {
+          @include media-breakpoint-up(lg) {
+            background-color: $navbar-defs-hover-bg-color;
+          }
+            background-color: transparent;
+          color: $navbar-defs-hover-color;
+        }
+        color: $navbar-defs-color;
+
+        &.active {
+          background-color: $navbar-defs-active-bg-color;
+          color: $navbar-defs-active-color;
+        }
+      }
+    }
+  
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      background-color: $navbar-defs-active-bg-color;
+      color: $navbar-defs-active-color;
+    }
+  }
+  
+  .navbar-toggler {
+    color: $navbar-defs-color;
+    border-color: $navbar-defs-toggler-border-color;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: $navbar-defs-toggler-icon-bg;
+  }
+  
+  .navbar-text {
+    color: $navbar-defs-color;
+    a {
+      color: $navbar-defs-active-color;
+
+      @include hover-focus {
+        color: $navbar-defs-active-color;
+      }
+    }
+  }
+}

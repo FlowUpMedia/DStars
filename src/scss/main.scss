@@ -1,0 +1,20 @@
+// 
+// Scss main file
+// 
+
+// Import bootstrap and fontawesome
+@import 'vendor/glob';
+
+// Import all custom styles
+
+// Base
+@import 'base/glob';
+
+// Layout
+@import 'layout/glob';
+
+// Components
+@import 'components/glob';
+
+// Pages
+@import 'pages/glob';
